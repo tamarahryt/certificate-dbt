@@ -1,0 +1,27 @@
+version: 2
+
+sources:
+  - name: raw_nikita
+    database: prj-s-dlp-dq-sandbox-0b3c
+    schema: raw_nikita  
+    tables:
+      - name: raw_customers
+
+      - name: raw_orders
+        loaded_at_field: ordered_at
+        freshness: # make this a little more strict
+          warn_after: {count: 2860, period: day}
+          error_after: {count: 2960, period: day}
+  
+  - name: marketing_linkedin
+    database: ld-snowplow
+    schema: marketing_linkedin  
+    tables:
+      - name: linkedin_company_ODS
+
+  - name: dbt_thrytsyk
+    database: prj-s-dlp-dq-sandbox-0b3c
+    schema: dbt_thrytsyk  
+    tables:
+      - name: DP_PATTERN_ANALYSIS_DATA_IA1
+

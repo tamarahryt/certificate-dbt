@@ -32,5 +32,15 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   certificate_dbt:
     # Config indicated by + and applies to all files under models/example/
-    example:
+    example/example:
       +materialized: view
+      +tags: ['tag1']
+    example/stg:
+      +materialized: view
+      +tags: ['tag2']
+
+vars:
+  certificate_dbt:
+    my_timezone: 'America/Toronto'
+
+
