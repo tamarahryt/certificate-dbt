@@ -6,7 +6,11 @@ sources:
     schema: raw_nikita  
     tables:
       - name: raw_customers
-
+      - name: raw_items
+      - name: raw_payments            
+      - name: raw_products
+      - name: raw_stores
+      - name: raw_supplies
       - name: raw_orders
         loaded_at_field: ordered_at
         freshness: # make this a little more strict
@@ -24,4 +28,6 @@ sources:
     schema: dbt_thrytsyk  
     tables:
       - name: DP_PATTERN_ANALYSIS_DATA_IA1
+      - name: DP_PROFILING_COMPLETENESS
+
 

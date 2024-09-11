@@ -1,0 +1,7 @@
+version: 2
+
+models:
+  - name: fct_cust_orders
+    data_tests:
+      - dbt_utils.equal_rowcount:
+          compare_model: ref('stg_orders')

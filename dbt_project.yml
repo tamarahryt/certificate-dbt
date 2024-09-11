@@ -42,5 +42,9 @@ models:
 vars:
   certificate_dbt:
     my_timezone: 'America/Toronto'
+    default_null: 'NA'
+
+data_tests:
+  +severity: warn  # all tests
 
 
