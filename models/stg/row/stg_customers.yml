@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - not_null:
+              tags: ["not_null_value"]
+          - unique:
+              tags: ["unique_value"]
+
+      - name: name
+        description: "The foreign key for this table"
+        data_tests:
+          - not_null:
+              tags: ["not_null_value"]
+          - column_length

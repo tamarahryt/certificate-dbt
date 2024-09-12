@@ -17,12 +17,6 @@ sources:
           warn_after: {count: 2860, period: day}
           error_after: {count: 2960, period: day}
   
-  - name: marketing_linkedin
-    database: ld-snowplow
-    schema: marketing_linkedin  
-    tables:
-      - name: linkedin_company_ODS
-
   - name: dbt_thrytsyk
     database: prj-s-dlp-dq-sandbox-0b3c
     schema: dbt_thrytsyk  

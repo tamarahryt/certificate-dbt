@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: stg_accnts
+    description: "A starter dbt model"
+    columns:
+      - name: domain_process_name
+        description: "The primary key for this table"
+        data_tests:
+          - not_null:
+              tags: ["not_null_value"]
+      - name: schema_name_file_path
+        description: "The foreign key for this table"
+        data_tests:
+          - not_null:
+              tags: ["not_null_value"]
+      - name: data_source_mnemonic_code
+        description: "The code for this table"
+        data_tests:
+          - not_null:
+              tags: ["not_null_value"]
+          - accepted_values:
+              values: ['BCL', 'BCVC', 'BGND']
+              tags: ["accepted_value"]
+
+              

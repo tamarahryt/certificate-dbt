@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - not_null:
+              tags: ["not_null_value"]
+          - unique:
+              tags: ["unique_value"]
+
+      - name: customer
+        description: "The foreign key for this table"
+        data_tests:
+          - not_null:
+              tags: ["not_null_value"]
+          - relationships:
+              to: ref('stg_customers')
+              field: id
+              tags: ["relation_value"]
+
+
+              
