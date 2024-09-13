@@ -5,3 +5,9 @@ models:
     data_tests:
       - dbt_utils.equal_rowcount:
           compare_model: ref('stg_orders')
+    
+    columns:
+      - name: id
+        data_tests:
+          - not_null
+          

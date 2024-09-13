@@ -30,6 +30,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 # directory as views. These settings can be overridden in the individual model
 # files using the `{{ config(...) }}` macro.
 
+models:
+  +on_schema_change: "sync_all_columns"
 
 vars:
   certificate_dbt:
@@ -37,6 +39,7 @@ vars:
     default_null: 'NA'
 
 data_tests:
+  +store_failures: true
   +severity: warn  # all tests
 
 on-run-start:
@@ -44,4 +47,5 @@ on-run-start:
 
 on-run-end:
   - "{{ get_end_run_date() }}"
+
 
