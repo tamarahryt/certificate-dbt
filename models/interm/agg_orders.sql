@@ -1,3 +1,8 @@
+{{ config(
+    tags=["agg"]
+    ) 
+}}
+
 SELECT
     customer
     , count(1) as order_cnt

@@ -1,0 +1,11 @@
+selectors:
+  - name: selector_1
+    description: "Incremental models that do smth"
+    definition:
+
+      union:
+        - method: fqn
+          value: fct_cust_orders
+        - 'models/interm'
+        - exclude:
+          - 'tag:agg'
